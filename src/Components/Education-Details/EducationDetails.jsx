@@ -1,7 +1,17 @@
-import InputField from "./InputField";
-import "../styles/details.css";
+/* eslint-disable react/prop-types */
+import InputField from "../InputField";
+import "../../styles/details.css";
+import "../../styles/edu.css"
+import Button from "../Buttons";
 
-function Education(){
+
+function clickSave(){
+
+}
+
+
+
+function Education({onCancel}){
     return (
         <>
         <div className="Details-Education">
@@ -11,7 +21,12 @@ function Education(){
         <InputField label="Start Date" placeholder="Enter Start Date" type="text"/>
         <InputField label="End Date" placeholder="Enter End Date" type="text"/>
         <InputField label="Location" placeholder="Enter Location" type="text"/>
-
+        
+        <div className="edu-btn">
+            <Button name = "save" classname="btn" onClick={clickSave}/>
+            <Button name="cancel" classname="btn" onClick={onCancel}/>
+            <Button name="delete" classname="btn" onClick={onCancel}/>
+        </div>
         </div>
         </>
     )

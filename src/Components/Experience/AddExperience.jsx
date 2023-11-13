@@ -1,12 +1,11 @@
 import { useState } from "react";
-import "../../styles/edu.css"
 import "../../styles/details.css";
 import Button from "../Buttons";
-import Education from "./EducationDetails";
+import Experience from "./ExperienceDetails";
 
 
 
-function AddEduction(){
+function AddExperience(){
   const[isFormVisible ,setIsFormVisible]=useState(false);
 
   const toggleFormVisibility=()=>{
@@ -18,7 +17,7 @@ function AddEduction(){
         {!isFormVisible && (
           <div className="Details-Education">
           <div className="Details-title">
-            <h2>Education</h2>
+            <h2>Experience</h2>
            <Button classname="expand-btn"
             name= {<i className="arrow down"></i>}
             onClick={toggleFormVisibility}
@@ -27,9 +26,9 @@ function AddEduction(){
          </div>
          )}
        
-        {isFormVisible && <Education onCancel={toggleFormVisibility}/>}
+        {isFormVisible && <Experience onCancel={toggleFormVisibility}/>}
         </>
     )
 }
 
-export default AddEduction;
+export default AddExperience;

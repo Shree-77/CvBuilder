@@ -9,8 +9,6 @@ function clickSave(){
 
 }
 
-
-
 function Education({onCancel}){
     return (
         <>

@@ -1,7 +1,15 @@
-import InputField from "./InputField";
-import "../styles/details.css";
+/* eslint-disable react/prop-types */
+import InputField from "../InputField";
+import "../../styles/details.css";
+import Button from "../Buttons";
 
-function Experience(){
+function clickSave(){
+    
+}
+
+function Experience({onCancel}){
+
+    
     return(
         <>
         <div className="Details-Experience">
@@ -12,7 +20,11 @@ function Experience(){
         <InputField label="End Date" placeholder="Enter End Date" type="text"/>
         <InputField label="Location" placeholder="Enter Location" type="text"/>
         <InputField label="Description " placeholder=" Enter Description" type="textarea"/>
-
+            <div className="edu-btn">
+            <Button name = "save" classname="btn" onClick={clickSave}/>
+            <Button name="cancel" classname="btn" onClick={onCancel}/>
+            <Button name="delete" classname="btn" onClick={onCancel}/>
+        </div>
         </div>
         </>
     )

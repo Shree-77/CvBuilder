@@ -15,5 +15,8 @@
 .Details h2 {
     margin-bottom: 10px;
 }
-
+.Details-title {
+    display: flex;
+    justify-content: space-between;
+}
 

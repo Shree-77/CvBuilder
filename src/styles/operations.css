@@ -1,9 +1,8 @@
-.Operations{
+.Operations {
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: fit-content;
-        height: fit-content;
-        
-        padding: 10px;
-
+    display: flex;
+    height: fit-content;
+    padding: 20px;
+    margin: 20px;
 }

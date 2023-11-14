@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "../styles/buttons.css"
 
-function Button({classname,name , onClick}){
+function Button({classname,name,onClick}){
 
     return(
         <>

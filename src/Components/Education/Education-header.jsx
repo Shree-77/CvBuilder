@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../../styles/edu.css"
 import "../../styles/details.css";
 import Button from "../Buttons";
-import Education from "./EducationDetails";
+import SaveEducation from "./SaveEducation";
 
 
 
@@ -27,7 +27,7 @@ function AddEduction(){
          </div>
          )}
        
-        {isFormVisible && <Education onCancel={toggleFormVisibility}/>}
+        {isFormVisible && <SaveEducation toggleFormVisibility={toggleFormVisibility} />}
         </>
     )
 }

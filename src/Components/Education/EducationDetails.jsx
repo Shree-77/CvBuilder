@@ -8,8 +8,15 @@ import Button from "../Buttons";
 function clickSave(){
 
 }
+function clickCancel(){
 
-function Education({onCancel}){
+}
+
+function clickDelete(){
+    
+}
+
+function Education(){
     return (
         <>
         <div className="Details-Education">
@@ -22,8 +29,8 @@ function Education({onCancel}){
         
         <div className="edu-btn">
             <Button name = "save" classname="btn" onClick={clickSave}/>
-            <Button name="cancel" classname="btn" onClick={onCancel}/>
-            <Button name="delete" classname="btn" onClick={onCancel}/>
+            <Button name="cancel" classname="btn" onClick={clickCancel}/>
+            <Button name="delete" classname="btn" onClick={clickDelete}/>
         </div>
         </div>
         </>

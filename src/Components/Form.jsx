@@ -3,8 +3,10 @@
 import Operations from "./Operators"
 import Person from "./PersonDetails"
 import "../styles/form.css"
-import AddEduction from "./Education-Details/AddEducation"
+
 import AddExperience from "./Experience/AddExperience"
+import AddEduction from "./Education/Education-header"
+
 
 function Form() {
 
@@ -13,7 +15,8 @@ function Form() {
     <div className="Form">
        <Operations />
        <Person />
-       <AddEduction />
+       <AddEduction/>
+       {/* <SaveEducation /> */}
        <AddExperience />
     </div>
     </>

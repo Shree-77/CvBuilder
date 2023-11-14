@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../../styles/details.css";
 import Button from "../Buttons";
-import Experience from "./ExperienceDetails";
+import SaveExperience from "./SaveExperience";
 
 
 
@@ -26,7 +26,7 @@ function AddExperience(){
          </div>
          )}
        
-        {isFormVisible && <Experience onCancel={toggleFormVisibility}/>}
+        {isFormVisible && <SaveExperience toggleFormVisibility={toggleFormVisibility}/>}
         </>
     )
 }

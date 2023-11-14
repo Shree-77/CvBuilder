@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../styles/edu.css"
+import "../../styles/form.css"
 import "../../styles/details.css";
 import Button from "../Buttons";
 import SaveEducation from "./SaveEducation";

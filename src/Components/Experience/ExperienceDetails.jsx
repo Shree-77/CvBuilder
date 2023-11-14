@@ -8,11 +8,11 @@ function clickSave(){
 }
 
 function Experience({onCancel}){
-
     
     return(
         <>
-        <div className="Details-Experience">
+        <form action="">
+            <div className="Details-Experience">
             <h2>Experience</h2>
         <InputField label="Company Name" placeholder="Enter Company Name" type="text"/>
         <InputField label="Position Title" placeholder="Enter Position Title" type="text"/>
@@ -26,6 +26,7 @@ function Experience({onCancel}){
             <Button name="delete" classname="btn" onClick={onCancel}/>
         </div>
         </div>
+        </form>
         </>
     )
 }

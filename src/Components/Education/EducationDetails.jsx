@@ -1,25 +1,20 @@
 /* eslint-disable react/prop-types */
 import InputField from "../InputField";
 import "../../styles/details.css";
-import "../../styles/edu.css"
+import "../../styles/form.css"
 import Button from "../Buttons";
 
 
 function clickSave(){
 
 }
-function clickCancel(){
 
-}
 
-function clickDelete(){
-    
-}
-
-function Education(){
+function Education({FormVisible}){
     return (
         <>
-        <div className="Details-Education">
+        <form action="">
+            <div className="Details-Education">
             <h2>Education Details</h2>
         <InputField label="School" placeholder="Enter school/university" type="text"/>
         <InputField label="Degree" placeholder="Enter Degree / Field Of Study" type="text"/>
@@ -29,10 +24,11 @@ function Education(){
         
         <div className="edu-btn">
             <Button name = "save" classname="btn" onClick={clickSave}/>
-            <Button name="cancel" classname="btn" onClick={clickCancel}/>
-            <Button name="delete" classname="btn" onClick={clickDelete}/>
+            <Button name="cancel" classname="btn" onClick={FormVisible}/>
+            <Button name="delete" classname="btn" onClick={FormVisible}/>
         </div>
         </div>
+        </form>
         </>
     )
 }

@@ -2,7 +2,7 @@
 
 import Operations from "./Operators"
 import Person from "./PersonDetails"
-import "../styles/form.css"
+import "../styles/left.css"
 
 import AddExperience from "./Experience/AddExperience"
 import AddEduction from "./Education/Education-header"

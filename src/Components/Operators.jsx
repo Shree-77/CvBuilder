@@ -5,8 +5,8 @@ function Operations(){
     return(
         <>
         <div className="Operations">
-            <Button name = "Clear Resume"/>
-            <Button  name = "Load Resume"/>
+            <Button name = "Clear Resume" classname="btn" />
+            <Button  name = "Load Resume"classname="btn" />
         </div>
         </>
     )

@@ -1,0 +1,22 @@
+.Details-Education,
+.Details-Experience,
+.Details-Person {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 12px;
+        border: 2px solid black;
+        margin: 20px;
+        padding: 20px;
+     
+
+}
+
+.Details h2 {
+    margin-bottom: 10px;
+}
+.Details-title {
+    display: flex;
+    justify-content: space-between;
+}
+

@@ -1,7 +1,7 @@
 
 
 import Operations from "./Operators"
-import Person from "./PersonDetails"
+import Person from "./Personal/PersonDetails"
 import "../styles/left.css"
 
 import AddExperience from "./Experience/AddExperience"

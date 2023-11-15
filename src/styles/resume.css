@@ -1,0 +1,36 @@
+.Resume-Container {
+    background-color: white;
+    border: 2px solid rgb(252, 252, 252);
+    width: 70%;
+    height: fit-content;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.personal-section {
+    background-color: #2B3499;
+    padding: 20px;
+    margin:10px;
+    color: white;
+    text-shadow: 2px black;
+}
+
+/* Add the following styles to PersonalInfoSection.css */
+.nameInfo {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contact  {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.contact div{
+    margin-bottom: 5px;
+}
+
+

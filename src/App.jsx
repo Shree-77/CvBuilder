@@ -1,11 +1,15 @@
 import Form from "./Components/Form"
+import Resume from "./Components/Resume";
 import "./styles/App.css";
 
 function App() {
 
   return (
     <> 
-     <Form />
+     <div className="AppBody">
+      <Form />
+     <Resume />
+     </div>
     </>
   )
 }

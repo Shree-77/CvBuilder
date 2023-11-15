@@ -6,7 +6,7 @@ function ExperienceInfoSection(){
                 <h3 className="section-title">Experience Details</h3>
             </div>
             <div className="Display-Experience">
-                <div className="Date-Location">
+                <div className="Date-Location-exp">
                    <p className="date-period"><span>Start Date</span>- <span>End Date</span></p>
                    <p className="location"><span>Location</span></p>
                 </div>

@@ -2,7 +2,7 @@
     background-color: white;
     border: 2px solid rgb(252, 252, 252);
     width: 70%;
-    height: fit-content;
+    height: auto;
     background: rgb(255, 255, 255);
     overflow: hidden;
     border-radius: 4px;
@@ -16,7 +16,7 @@
     text-shadow: 2px black;
 }
 
-/* Add the following styles to PersonalInfoSection.css */
+
 .nameInfo {
     margin-bottom: 10px;
     text-align: center;
@@ -33,4 +33,26 @@
     margin-bottom: 5px;
 }
 
+/* Experience details */
+
+.section-title{
+    text-align: center;
+    background-color: #2B3499;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+}
+
+.Display-Education{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.date-period,
+.location,
+.University,
+.Department{
+    margin: 0;
+    padding: 0;
+}
 

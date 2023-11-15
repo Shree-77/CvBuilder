@@ -1,5 +1,5 @@
-import InputField from "./InputField";
-import "../styles/details.css";
+import InputField from "../InputField";
+import "../../styles/details.css";
 
 function Person(){
     return (

@@ -1,5 +1,6 @@
 import "../styles/resume.css"
 import EducationInfoSection from "./Education/EducationInfoSection";
+import ExperienceInfoSection from "./Experience/ExperienceInfoSection";
 import PersonalInfoSection from "./Personal/Personalnfo";
 
 
@@ -12,6 +13,9 @@ function Resume(){
         </div>
         <div className="education-section">
             <EducationInfoSection />
+        </div>
+        <div className="experience-section">
+            <ExperienceInfoSection />
         </div>
         </div>
         </>

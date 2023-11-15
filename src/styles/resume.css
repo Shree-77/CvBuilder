@@ -43,16 +43,33 @@
     color: white;
 }
 
-.Display-Education{
-    text-align: center;
+.Display-Education,
+.Display-Experience{
     display: flex;
     justify-content: space-around;
 }
+.Date-Location{
+    text-align: right;
+}
+
 .date-period,
 .location,
 .University,
-.Department{
+.Department,
+.company,
+.position,
+.description{
     margin: 0;
     padding: 0;
+}
+
+.Display-Experience {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Date-Location,
+.company-designation {
+    width: 48%;
 }
 

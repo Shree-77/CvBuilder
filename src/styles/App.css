@@ -4,4 +4,6 @@ body{
 
 .AppBody{
   display: flex;
+  justify-content:space-around;
 }
+

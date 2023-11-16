@@ -1,6 +1,6 @@
-import exampledata from "../../Exampledata";
+/* eslint-disable react/prop-types */
 
-function ExperienceInfoSection(){
+function ExperienceInfoSection({experiences}){
     return(
         <>
         <div className="container-ExperienceInfo">
@@ -8,7 +8,7 @@ function ExperienceInfoSection(){
                 <h3 className="section-title">Experience Details</h3>
             </div>
             <div className="Display-Experience">
-                {exampledata.sections.experiences.map((experience)=>
+                {experiences.map((experience)=>
                     <div key={experience.id} className="Experience-Entry">
                         <div className="Data-Location-exp">
                             <p className="date-period"><span>{experience.startDate}</span>-<span>{experience.endDate}</span></p>

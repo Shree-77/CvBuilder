@@ -1,11 +1,7 @@
+/* eslint-disable react/prop-types */
 
-import exampledata from "../../Exampledata";
-
-function PersonalInfoSection() {
-    const name = exampledata.personalInfo.fullName;
-    const email=exampledata.personalInfo.email;
-    const phone=exampledata.personalInfo.phoneNumber;
-    const address =exampledata.personalInfo.address;
+function PersonalInfoSection({name,email,phone,address}) {
+    
     return (
         <>
 
@@ -14,7 +10,7 @@ function PersonalInfoSection() {
             </div>
             <div className="contact">
                 <div>
-                    <i className="fas fa-envelope"></i>
+                    <i className="fas fa-envelope" style={{fontSize:'20px'}}></i>
                     <span>{email}</span>
                 </div>
                 <div>

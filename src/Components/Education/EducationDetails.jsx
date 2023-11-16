@@ -9,7 +9,6 @@ function clickSave(){
 
 }
 
-
 function Education({FormVisible}){
     return (
         <>

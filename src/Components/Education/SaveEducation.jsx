@@ -7,12 +7,17 @@ import { useState } from "react";
 import Education from "./EducationDetails";
 
 
-function SaveEducation({toggleFormVisibility}){
+function SaveEducation({toggleFormVisibility , clearSample}){
     const[showForm,SetshowForm]=useState(false);
+    
 
     function FormVisible(){
         SetshowForm(!showForm);
+        if(showForm===true){
+            clearSample();
+        }
     }
+
     return(
         <>
         {!showForm && (

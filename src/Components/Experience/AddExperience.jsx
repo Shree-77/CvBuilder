@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import "../../styles/details.css";
 import Button from "../Buttons";
@@ -5,11 +6,14 @@ import SaveExperience from "./SaveExperience";
 
 
 
-function AddExperience(){
+function AddExperience({clearResume}){
   const[isFormVisible ,setIsFormVisible]=useState(false);
 
   const toggleFormVisibility=()=>{
     setIsFormVisible(!isFormVisible);
+    if(isFormVisible===false){
+      clearResume();
+    }
   }
 
     return(

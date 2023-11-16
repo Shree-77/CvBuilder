@@ -4,7 +4,6 @@ function PersonalInfoSection({name,email,phone,address}) {
     
     return (
         <>
-
             <div className="nameInfo">
                 <h2>{name}</h2>
             </div>

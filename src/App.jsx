@@ -6,26 +6,23 @@ import PersonalInfoSection from "./Components/Personal/Personalnfo";
 import exampledata from "./Exampledata";
 import TemplateLoader from "./Components/TemplateLoader";
 import { useState } from "react";
-import Form from "./Components/Form";
+import Person from "./Components/Personal/PersonDetails";
+import AddEduction from "./Components/Education/Education-header";
+import AddExperience from "./Components/Experience/AddExperience";
 
 function App() {
-  const [personalInfo, setPersonalInfo] = useState(exampledata.personalInfo);
-  const [educationInfo, setEducationInfo] = useState(
-    exampledata.sections.educations
-  );
-  const [experienceInfo, setExperienceInfo] = useState(
-    exampledata.sections.experiences
-  );
+ const [personalInfo, setPersonalInfo] = useState({
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    address: "",
+  });
+  const [educationInfo, setEducationInfo] = useState([]);
+  const [experienceInfo, setExperienceInfo] = useState([]);
 
-  return (
-    <> 
-    
-      <div className="AppBody">
-        <div className="left-side">
-          <Form />
-        <TemplateLoader
-          clearResume={() => {
-            setPersonalInfo({
+  
+  function clearResume(){
+    setPersonalInfo({
               fullName: "",
               email: "",
               phoneNumber: "",
@@ -33,16 +30,27 @@ function App() {
             });
             setEducationInfo([]);
             setExperienceInfo([]);
-          }}
-          sampleResume={() => {
-            setPersonalInfo(exampledata.personalInfo);
-            setEducationInfo(exampledata.sections.educations);
-            setExperienceInfo(exampledata.sections.experiences);
-          }}
+  }
+
+  function LoadSample(){[
+      setPersonalInfo(exampledata.personalInfo),
+      setEducationInfo(exampledata.sections.educations),
+      setExperienceInfo(exampledata.sections.experiences),
+  ]}
+  return (
+    <> 
+      <div className="AppBody">
+        <div className="left-side">
+        <TemplateLoader
+          clearResume={clearResume}
+          sampleResume={LoadSample}
         />
+          <Person />
+          <AddEduction clearResume={clearResume}/>
+          <AddExperience clearResume={clearResume}/>
         </div>
         <div className="Resume-Container">
-          <div className="personal-section">
+            <div className="personal-section">
             <PersonalInfoSection
               name={personalInfo.fullName}
               email={personalInfo.email}

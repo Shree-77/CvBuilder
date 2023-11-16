@@ -43,10 +43,9 @@
     color: white;
 }
 
-.Display-Education,
-.Display-Experience{
+.Education-Entry,.Experience-Entry{
     display: flex;
-    justify-content: space-around;
+    padding: 20px;
 }
 .Date-Location-exp{
     text-align: right;
@@ -63,14 +62,14 @@
     padding: 0;
 }
 
-.Display-Experience {
-    display: flex;
-    justify-content: space-between;
-}
 
 .Date-Location-exp,
 .Date-Location,
 .company-designation {
     width: 48%;
+}
+
+.Experience-Entry{
+    justify-content: space-around;
 }
 

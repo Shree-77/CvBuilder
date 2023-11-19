@@ -2,18 +2,30 @@ import "./styles/App.css";
 import "./styles/resume.css";
 import EducationInfoSection from "./Components/Education/EducationInfoSection";
 import ExperienceInfoSection from "./Components/Experience/ExperienceInfoSection";
-import PersonalInfoSection from "./Components/Personal/Personalnfo";
 import exampledata from "./Exampledata";
 import TemplateLoader from "./Components/TemplateLoader";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Person from "./Components/Personal/PersonDetails";
+import PersonalInfoSection from "./Components/Personal/Personalnfo";
 import AddEducation from "./Components/Education/Education-header";
 import AddExperience from "./Components/Experience/AddExperience";
 
 function App() {
+  const [personalInfo, setPersonalInfo] = useState(()=>{
+    const localValue=localStorage.getItem("PERSONALINFO")
+    if (localValue===null) return []
+    return JSON.parse(localValue)
+  });
+  const [educationInfo, setEducationInfo] = useState([]);
+  const [experienceInfo, setExperienceInfo] = useState([]);
   const [isEducationInfoVisible, setIsEducationInfoVisible] = useState(false);
   const [isExperienceInfoVisible, setIsExperienceInfoVisible] = useState(false);
 
+useEffect(() => {
+  localStorage.setItem("PERSONALINFO",JSON.stringify(personalInfo))
+}, [personalInfo]);
+
+ 
   const toggleFormVisibility = (formType) => {
     if (formType === "education") {
       setIsEducationInfoVisible(!isEducationInfoVisible);
@@ -23,14 +35,8 @@ function App() {
       setIsEducationInfoVisible(false);
     }
   };
- 
-  const [personalInfo, setPersonalInfo] = useState([]);
 
-
-  const [educationInfo, setEducationInfo] = useState([]);
-  const [experienceInfo, setExperienceInfo] = useState([]);
-
-   function handlePersonalInfo(fieldName, value) {
+  function handlePersonalInfo(fieldName, value) {
     setPersonalInfo((prevInfo) => ({
       ...prevInfo,
       [fieldName]: value,
@@ -38,12 +44,7 @@ function App() {
   }
 
   function clearResume() {
-    setPersonalInfo({
-      fullName: "",
-      email: "",
-      phoneNumber: "",
-      address: "",
-    });
+    setPersonalInfo({});
     setEducationInfo([]);
     setExperienceInfo([]);
   }
@@ -68,7 +69,6 @@ function App() {
             email={personalInfo.email}
             phone={personalInfo.phoneNumber}
             address={personalInfo.address}
-           
           />
           <AddEducation
             isFormVisible={isEducationInfoVisible}

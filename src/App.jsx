@@ -23,11 +23,10 @@ function App() {
       setIsEducationInfoVisible(false);
     }
   };
-
  
   const [personalInfo, setPersonalInfo] = useState([]);
 
-  console.log(personalInfo);
+
   const [educationInfo, setEducationInfo] = useState([]);
   const [experienceInfo, setExperienceInfo] = useState([]);
 
@@ -83,7 +82,7 @@ function App() {
 
         <div className="Resume-Container">
           <div className="personal-section">
-            <PersonalInfoSection personaldetails={personalInfo} handlePersonalInfo={handlePersonalInfo}/>
+            <PersonalInfoSection personaldetails={personalInfo} />
           </div>
           <div className="education-section">
             <EducationInfoSection educations={educationInfo} />

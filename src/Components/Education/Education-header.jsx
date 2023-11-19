@@ -1,20 +1,11 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
 import "../../styles/form.css"
 import "../../styles/details.css";
 import Button from "../Buttons";
 import SaveEducation from "./SaveEducation";
 
-function AddEduction({clearResume}){
-  const[isFormVisible ,setIsFormVisible]=useState(false);
-
-  const toggleFormVisibility=()=>{
-    setIsFormVisible(!isFormVisible);
-    if(isFormVisible===false){
-      clearResume();
-    }
-  }
-
+function AddEduction({isFormVisible , toggleFormVisibility}){
+  
     return(
         <>
         {!isFormVisible && (

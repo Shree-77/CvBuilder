@@ -2,7 +2,7 @@
 import "../styles/inputfield.css";
 
 
-function InputField({ label, placeholder, type }) {
+function InputField({ label, placeholder, type , value , onChange}) {
   return (
     <>
      <div className="input-field-container">
@@ -10,7 +10,8 @@ function InputField({ label, placeholder, type }) {
       {type === "textarea" ? (
         <textarea placeholder={placeholder}></textarea>
       ) : (
-        <input type={type} placeholder={placeholder} />
+        <input type={type} placeholder={placeholder} value={value} onChange={onChange}/>
+        
       )}
      </div>
     </>

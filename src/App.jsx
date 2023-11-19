@@ -44,7 +44,7 @@ useEffect(() => {
   }
 
   function clearResume() {
-    setPersonalInfo({});
+    setPersonalInfo([]);
     setEducationInfo([]);
     setExperienceInfo([]);
   }

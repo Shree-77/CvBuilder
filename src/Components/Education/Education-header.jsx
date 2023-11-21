@@ -4,7 +4,7 @@ import "../../styles/details.css";
 import Button from "../Buttons";
 import SaveEducation from "./SaveEducation";
 
-function AddEduction({isFormVisible , toggleFormVisibility}){
+function AddEduction({isFormVisible , toggleFormVisibility , handleFormSubmit,educationData,handleInputChange}){
   
     return(
         <>
@@ -20,7 +20,7 @@ function AddEduction({isFormVisible , toggleFormVisibility}){
          </div>
          )}
        
-        {isFormVisible && <SaveEducation toggleFormVisibility={toggleFormVisibility} />}
+        {isFormVisible && <SaveEducation toggleFormVisibility={toggleFormVisibility} handleFormSubmit={handleFormSubmit} educationData={educationData} handleInputChange={handleInputChange} />}
         </>
     )
 }

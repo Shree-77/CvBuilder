@@ -7,7 +7,7 @@ import { useState } from "react";
 import Education from "./EducationDetails";
 
 
-function SaveEducation({toggleFormVisibility }){
+function SaveEducation({toggleFormVisibility , handleFormSubmit,educationData,handleInputChange}){
     const[showForm,SetshowForm]=useState(false);
     
     function FormVisible(){
@@ -29,7 +29,7 @@ function SaveEducation({toggleFormVisibility }){
             <Button name="Add Education" classname="btn" onClick={FormVisible} />
         </div>
         )}
-        {showForm && <Education FormVisible={FormVisible}/>}
+        {showForm && <Education FormVisible={FormVisible} handleFormSubmit={handleFormSubmit} educationData={educationData} handleInputChange={handleInputChange}/>}
         </>
     )
 }

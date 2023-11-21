@@ -12,6 +12,7 @@ import AddExperience from "./Components/Experience/AddExperience";
 
 
 function App() {
+
   const [personalInfo, setPersonalInfo] = useState(() => {
     const localValue = localStorage.getItem("PERSONALINFO");
     if (localValue === null) return [];
@@ -23,6 +24,14 @@ function App() {
 
   const [isEducationInfoVisible, setIsEducationInfoVisible] = useState(false);
   const [isExperienceInfoVisible, setIsExperienceInfoVisible] = useState(false);
+
+  const [educationData,setEducationData]=useState({
+        degree: '',
+        schoolName: '',
+        location: '',
+        startDate: '',
+        endDate: '',
+  });
 
   const [experienceData, setExperienceData] = useState({
     companyName: '',
@@ -58,16 +67,16 @@ function App() {
     }));
   }
 
-  console.log(experienceData);
+  console.log(educationData);
 
-   const handleExperienceInputChange = (fieldName, value) => {
-    setExperienceData((prevData) => ({
+   const handleInputChange = (datasetter) =>(fieldName,value)=> {
+    datasetter((prevData) => ({
       ...prevData,
       [fieldName]: value,
     }));
   };
 
-  const onSubmitExperience = (e) => {
+ const onSubmitExperience = (e) => {
     e.preventDefault();
     const newExperience = { id: generateUniqueId(), ...experienceData };
     setExperienceInfo((prevInfo) => [...prevInfo, newExperience]);
@@ -80,6 +89,19 @@ function App() {
       description: '',
     });
   };
+
+ const onSubmitEducation=(e)=>{
+   e.preventDefault();
+    const newEducation = { id: generateUniqueId(), ...educationData };
+    setEducationInfo((prevInfo) => [...prevInfo, newEducation]);
+    setEducationData({
+      schoolName: '',
+      degree: '',
+      startDate: '',
+      endDate: '',
+      location: '',
+    });
+ }
 
   function clearResume() {
     setPersonalInfo([]);
@@ -111,13 +133,17 @@ function App() {
           <AddEducation
             isFormVisible={isEducationInfoVisible}
             toggleFormVisibility={() => toggleFormVisibility("education")}
+            handleFormSubmit={onSubmitEducation}
+            educationData={educationData}
+            handleInputChange={handleInputChange(setEducationData)}
+
           />
           <AddExperience
             isFormVisible={isExperienceInfoVisible}
             toggleFormVisibility={() => toggleFormVisibility("experience")}
             handleFormSubmit={onSubmitExperience}
             experienceData={experienceData}
-            handleInputChange={handleExperienceInputChange}
+            handleInputChange={handleInputChange(setExperienceData)}
           />
         </div>
 

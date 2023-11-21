@@ -5,24 +5,53 @@ import "../../styles/form.css"
 import Button from "../Buttons";
 
 
-function clickSave(){
 
-}
 
-function Education({FormVisible}){
+function Education({FormVisible , handleFormSubmit,educationData,handleInputChange}){
     return (
         <>
-        <form action="">
+        <form onSubmit={handleFormSubmit}>
             <div className="Details-Education">
             <h2>Education Details</h2>
-        <InputField label="School" placeholder="Enter school/university" type="text"/>
-        <InputField label="Degree" placeholder="Enter Degree / Field Of Study" type="text"/>
-        <InputField label="Start Date" placeholder="Enter Start Date" type="text"/>
-        <InputField label="End Date" placeholder="Enter End Date" type="text"/>
-        <InputField label="Location" placeholder="Enter Location" type="text"/>
+
+        <InputField 
+            label="School" 
+            placeholder="Enter school/university" 
+            type="text"
+            value={educationData.schoolName}
+            onChange={(e) => handleInputChange('schoolName', e.target.value)}
+        />
+        <InputField 
+            label="Degree"
+            placeholder="Enter Degree / Field Of Study"
+            type="text"
+            value={educationData.degree}
+            onChange={(e) => handleInputChange('degree', e.target.value)}
+        />
+        <InputField 
+            label="Start Date"
+            placeholder="Enter Start Date" 
+            type="text"
+            value={educationData.startDate}
+            onChange={(e) => handleInputChange('startDate', e.target.value)}
+        />
+        <InputField 
+            label="End Date" 
+            placeholder="Enter End Date"
+            type="text"
+            value={educationData.endDate}
+            onChange={(e) => handleInputChange('endDate', e.target.value)}
+        />
+        <InputField 
+            label="Location"
+            placeholder="Enter Location"
+            type="text"
+            value={educationData.location}
+            onChange={(e) => handleInputChange('location', e.target.value)}
+        />
         
         <div className="edu-btn">
-            <Button name = "save" classname="btn" onClick={clickSave}/>
+            <Button name = "save" classname="btn" onClick={handleFormSubmit}/>
             <Button name="cancel" classname="btn" onClick={FormVisible}/>
             <Button name="delete" classname="btn" onClick={FormVisible}/>
         </div>

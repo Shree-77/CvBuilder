@@ -1,17 +1,13 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
+
 import "../../styles/details.css";
 import Button from "../Buttons";
 import SaveExperience from "./SaveExperience";
 
 
 
-function AddExperience(){
-  const[isFormVisible ,setIsFormVisible]=useState(false);
-
-  const toggleFormVisibility=()=>{
-    setIsFormVisible(!isFormVisible);
-  }
-
+function AddExperience({toggleFormVisibility , isFormVisible , OnExperienceChange , handleFormSubmit, experienceData,handleInputChange}){
+  
     return(
         <>
         {!isFormVisible && (
@@ -26,7 +22,15 @@ function AddExperience(){
          </div>
          )}
        
-        {isFormVisible && <SaveExperience toggleFormVisibility={toggleFormVisibility}/>}
+        {isFormVisible &&
+         <SaveExperience 
+         OnExperienceChange={OnExperienceChange}
+        toggleFormVisibility={toggleFormVisibility }
+        handleFormSubmit={handleFormSubmit}
+        experienceData={experienceData}
+        handleInputChange={handleInputChange}
+        
+        />}
         </>
     )
 }

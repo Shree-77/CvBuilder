@@ -1,18 +1,11 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 import "../../styles/form.css"
 import "../../styles/details.css";
 import Button from "../Buttons";
 import SaveEducation from "./SaveEducation";
 
-
-
-function AddEduction(){
-  const[isFormVisible ,setIsFormVisible]=useState(false);
-
-  const toggleFormVisibility=()=>{
-    setIsFormVisible(!isFormVisible);
-  }
-
+function AddEduction({isFormVisible , toggleFormVisibility , handleFormSubmit,educationData,handleInputChange}){
+  
     return(
         <>
         {!isFormVisible && (
@@ -27,7 +20,7 @@ function AddEduction(){
          </div>
          )}
        
-        {isFormVisible && <SaveEducation toggleFormVisibility={toggleFormVisibility} />}
+        {isFormVisible && <SaveEducation toggleFormVisibility={toggleFormVisibility} handleFormSubmit={handleFormSubmit} educationData={educationData} handleInputChange={handleInputChange} />}
         </>
     )
 }

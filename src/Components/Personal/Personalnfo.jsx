@@ -1,25 +1,24 @@
 /* eslint-disable react/prop-types */
 
-function PersonalInfoSection({name,email,phone,address}) {
+function PersonalInfoSection({personaldetails}) {
     
     return (
         <>
-
             <div className="nameInfo">
-                <h2>{name}</h2>
+                <h2><span>{personaldetails.fullName}</span></h2>
             </div>
             <div className="contact">
                 <div>
-                    <i className="fas fa-envelope" style={{fontSize:'20px'}}></i>
-                    <span>{email}</span>
+                    
+                    <span>{personaldetails.email}</span>
                 </div>
                 <div>
-                    <i className="fas fa-phone"></i>
-                    <span>{phone}</span>
+                    
+                    <span>{personaldetails.phoneNumber}</span>
                 </div>
                 <div>
-                    <i className="fas fa-map-marker-alt"></i>
-                    <span>{address}</span>
+                    
+                    <span>{personaldetails.address}</span>
                 </div>
             </div>
         </>

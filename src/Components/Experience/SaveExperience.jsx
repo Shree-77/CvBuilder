@@ -4,9 +4,10 @@ import "../../styles/form.css"
 import "../../styles/buttons.css"
 import { useState } from "react";
 import Experience from "./ExperienceDetails";
+import CompanyDetails from "./CompanyDetails";
 
 
-function SaveExperience({toggleFormVisibility}){
+function SaveExperience({toggleFormVisibility, handleFormSubmit , experienceData,handleInputChange}){
     const[showForm,SetshowForm]=useState(false);
 
     function FormVisible(){
@@ -22,11 +23,18 @@ function SaveExperience({toggleFormVisibility}){
             onClick={toggleFormVisibility}
             />
          </div>
-            <h3 className="company-name">Company Name</h3>
+            <CompanyDetails company_name={experienceData.positionTitle}/>
             <Button name="Add Experience" classname="btn" onClick={FormVisible}/>
         </div>
         )}
-        {showForm && <Experience onCancel={FormVisible}/>}
+        {showForm &&
+         <Experience
+          onCancel={FormVisible} 
+         handleFormSubmit={handleFormSubmit}
+         experienceData={experienceData}
+         handleInputChange={handleInputChange}
+
+         />}
 
         </>
     )

@@ -9,7 +9,7 @@ function TemplateLoader({ clearResume, sampleResume }) {
     <>
       <div className="Operations">
         <Button name="Clear Resume" classname="btn" onClick={clearResume} />
-        <Button name="Load Resume" classname="btn" onClick={sampleResume} />
+        <Button name="Sample Resume" classname="btn" onClick={sampleResume} />
       </div>
     </>
   );

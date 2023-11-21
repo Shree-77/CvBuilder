@@ -2,10 +2,12 @@
 
 import InputField from '../InputField';
 import '../../styles/details.css';
+import "../../styles/form.css"
 import Button from '../Buttons';
 
 
-function Experience({ onCancel,  handleInputChange,handleFormSubmit, experienceData }) {
+
+function Experience({ FormVisible,  handleInputChange,handleFormSubmit, experienceData }) {
 
 
   return (
@@ -56,9 +58,9 @@ function Experience({ onCancel,  handleInputChange,handleFormSubmit, experienceD
             onChange={(e) => handleInputChange('description', e.target.value)}
           />
           <div className="edu-btn">
-            <Button type="submit" name="save" className="btn" onClick={handleFormSubmit} />
-            <Button name="cancel" className="btn" onClick={onCancel} />
-            <Button name="delete" className="btn" onClick={onCancel} />
+           <Button name = "save" classname="btn" onClick={handleFormSubmit}/>
+            <Button name="cancel" classname="btn" onClick={FormVisible}/>
+            <Button name="delete" classname="btn" onClick={FormVisible}/>
           </div>
         </div>
       </form>

@@ -12,25 +12,23 @@ import AddExperience from "./Components/Experience/AddExperience";
 
 
 function App() {
+  const loadFromLocalStorage = (key) => {
+    const localValue = localStorage.getItem(key);
+    return localValue === null ? [] : JSON.parse(localValue);
+  };
 
-  const [personalInfo, setPersonalInfo] = useState(() => {
-    const localValue = localStorage.getItem("PERSONALINFO");
-    if (localValue === null) return [];
-    return JSON.parse(localValue);
-  });
-
-  const [educationInfo, setEducationInfo] = useState([]);
-  const [experienceInfo, setExperienceInfo] = useState([]);
-
+  const [personalInfo, setPersonalInfo] = useState(() => loadFromLocalStorage("PERSONALINFO"));
+  const [educationInfo, setEducationInfo] = useState(() => loadFromLocalStorage("EDUCATIONINFO"));
+  const [experienceInfo, setExperienceInfo] = useState(() => loadFromLocalStorage("EXPERIENCEINFO"));
   const [isEducationInfoVisible, setIsEducationInfoVisible] = useState(false);
   const [isExperienceInfoVisible, setIsExperienceInfoVisible] = useState(false);
 
-  const [educationData,setEducationData]=useState({
-        degree: '',
-        schoolName: '',
-        location: '',
-        startDate: '',
-        endDate: '',
+  const [educationData, setEducationData] = useState({
+    degree: '',
+    schoolName: '',
+    location: '',
+    startDate: '',
+    endDate: '',
   });
 
   const [experienceData, setExperienceData] = useState({
@@ -45,6 +43,14 @@ function App() {
   useEffect(() => {
     localStorage.setItem("PERSONALINFO", JSON.stringify(personalInfo));
   }, [personalInfo]);
+
+  useEffect(() => {
+    localStorage.setItem("EDUCATIONINFO", JSON.stringify(educationInfo));
+  }, [educationInfo]);
+
+  useEffect(() => {
+    localStorage.setItem("EXPERIENCEINFO", JSON.stringify(experienceInfo));
+  }, [experienceInfo]);
 
   const toggleFormVisibility = (formType) => {
     if (formType === "education") {

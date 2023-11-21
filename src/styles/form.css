@@ -30,3 +30,8 @@
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
 }
+
+.company-details{
+    display: flex;
+    justify-content: space-around;
+}

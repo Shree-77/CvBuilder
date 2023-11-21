@@ -10,22 +10,33 @@ import PersonalInfoSection from "./Components/Personal/Personalnfo";
 import AddEducation from "./Components/Education/Education-header";
 import AddExperience from "./Components/Experience/AddExperience";
 
+
 function App() {
-  const [personalInfo, setPersonalInfo] = useState(()=>{
-    const localValue=localStorage.getItem("PERSONALINFO")
-    if (localValue===null) return []
-    return JSON.parse(localValue)
+  const [personalInfo, setPersonalInfo] = useState(() => {
+    const localValue = localStorage.getItem("PERSONALINFO");
+    if (localValue === null) return [];
+    return JSON.parse(localValue);
   });
+
   const [educationInfo, setEducationInfo] = useState([]);
   const [experienceInfo, setExperienceInfo] = useState([]);
+
   const [isEducationInfoVisible, setIsEducationInfoVisible] = useState(false);
   const [isExperienceInfoVisible, setIsExperienceInfoVisible] = useState(false);
 
-useEffect(() => {
-  localStorage.setItem("PERSONALINFO",JSON.stringify(personalInfo))
-}, [personalInfo]);
+  const [experienceData, setExperienceData] = useState({
+    companyName: '',
+    positionTitle: '',
+    startDate: '',
+    endDate: '',
+    location: '',
+    description: '',
+  });
 
- 
+  useEffect(() => {
+    localStorage.setItem("PERSONALINFO", JSON.stringify(personalInfo));
+  }, [personalInfo]);
+
   const toggleFormVisibility = (formType) => {
     if (formType === "education") {
       setIsEducationInfoVisible(!isEducationInfoVisible);
@@ -36,12 +47,39 @@ useEffect(() => {
     }
   };
 
+ const generateUniqueId = () => {
+  return crypto.randomUUID();
+};
+
   function handlePersonalInfo(fieldName, value) {
     setPersonalInfo((prevInfo) => ({
       ...prevInfo,
       [fieldName]: value,
     }));
   }
+
+  console.log(experienceData);
+
+   const handleExperienceInputChange = (fieldName, value) => {
+    setExperienceData((prevData) => ({
+      ...prevData,
+      [fieldName]: value,
+    }));
+  };
+
+  const onSubmitExperience = (e) => {
+    e.preventDefault();
+    const newExperience = { id: generateUniqueId(), ...experienceData };
+    setExperienceInfo((prevInfo) => [...prevInfo, newExperience]);
+    setExperienceData({
+      companyName: '',
+      positionTitle: '',
+      startDate: '',
+      endDate: '',
+      location: '',
+      description: '',
+    });
+  };
 
   function clearResume() {
     setPersonalInfo([]);
@@ -77,6 +115,9 @@ useEffect(() => {
           <AddExperience
             isFormVisible={isExperienceInfoVisible}
             toggleFormVisibility={() => toggleFormVisibility("experience")}
+            handleFormSubmit={onSubmitExperience}
+            experienceData={experienceData}
+            handleInputChange={handleExperienceInputChange}
           />
         </div>
 
@@ -97,3 +138,5 @@ useEffect(() => {
 }
 
 export default App;
+
+

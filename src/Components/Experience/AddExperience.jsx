@@ -6,7 +6,7 @@ import SaveExperience from "./SaveExperience";
 
 
 
-function AddExperience({toggleFormVisibility , isFormVisible}){
+function AddExperience({toggleFormVisibility , isFormVisible , OnExperienceChange , handleFormSubmit, experienceData,handleInputChange}){
   
     return(
         <>
@@ -22,7 +22,15 @@ function AddExperience({toggleFormVisibility , isFormVisible}){
          </div>
          )}
        
-        {isFormVisible && <SaveExperience toggleFormVisibility={toggleFormVisibility}/>}
+        {isFormVisible &&
+         <SaveExperience 
+         OnExperienceChange={OnExperienceChange}
+        toggleFormVisibility={toggleFormVisibility }
+        handleFormSubmit={handleFormSubmit}
+        experienceData={experienceData}
+        handleInputChange={handleInputChange}
+        
+        />}
         </>
     )
 }
